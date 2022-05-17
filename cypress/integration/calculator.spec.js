@@ -60,10 +60,10 @@ describe("Calculator", () => {
     cy.get('#number6').click();
     cy.get('#operator-multiply').click();
     cy.get('#number2').click();
-    cy.get('#operator-multiply').click();
+    cy.get('#operator-subtract').click();
     cy.get('#number5').click();
     cy.get('#operator-equals').click();
-    cy.get('.display').should('text', '60')
+    cy.get('.display').should('text', '7')
   })
 
   it('should be able to operate negative number', () => {

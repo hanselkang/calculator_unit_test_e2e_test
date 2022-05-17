@@ -82,16 +82,17 @@ describe('Calculator', () => {
     const button3 = container.getByTestId('number3');
     const buttonMulti = container.getByTestId('operator-multiply');
     const button2 = container.getByTestId('number2');
+    const buttonSubt = container.getByTestId('operator-subtract');
     const button5 = container.getByTestId('number5');
     const operatorEquals = container.getByTestId('operator-equals');
     const runningTotal = container.getByTestId('running-total');
     fireEvent.click(button3);
     fireEvent.click(buttonMulti); 
     fireEvent.click(button2);
-    fireEvent.click(buttonMulti); 
+    fireEvent.click(buttonSubt); 
     fireEvent.click(button5);
     fireEvent.click(operatorEquals);
-    expect(runningTotal.textContent).toEqual('30');
+    expect(runningTotal.textContent).toEqual('1');
   })
 
   it('should clear the running total without affecting the calculation', () => {
