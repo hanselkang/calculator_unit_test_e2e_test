@@ -3,24 +3,24 @@ describe("Calculator", () => {
     cy.visit("http://localhost:3000");
   })
 
-  it('should have working number buttons2', () => {
+  it('should display the correct number when click buttons2', () => {
     cy.get('#number2').click();
     cy.get('.display').should('text', '2')
   })
 
-  it('should have working number buttons3', () => {
+  it('should display the correct number when click buttons3', () => {
     cy.get('#number3').click();
     cy.get('.display').should('text', '3')
   })
 
-  it('should have working number buttons321', () => {
+  it('should display the correct number when click buttons321', () => {
     cy.get('#number3').click();
     cy.get('#number2').click();
     cy.get('#number1').click();
     cy.get('.display').should('text', '321')
   })
 
-  it('should have working with add operation', () => {
+  it('displays the correct number after the add operation is used', () => {
     cy.get('#number3').click();
     cy.get('#operator-add').click();
     cy.get('#number2').click();
@@ -28,7 +28,7 @@ describe("Calculator", () => {
     cy.get('.display').should('text', '5')
   })
 
-  it('should have working with subtract operation', () => {
+  it('displays the correct number after the subtract operation is used', () => {
     cy.get('#number3').click();
     cy.get('#number0').click();
     cy.get('#operator-subtract').click();
@@ -37,7 +37,7 @@ describe("Calculator", () => {
     cy.get('.display').should('text', '28')
   })
 
-  it('should have working with multiply operation', () => {
+  it('displays the correct number after the multiply operation is used', () => {
     cy.get('#number3').click();
     cy.get('#number3').click();
     cy.get('#operator-multiply').click();
@@ -46,7 +46,7 @@ describe("Calculator", () => {
     cy.get('.display').should('text', '66')
   })
 
-  it('should have working with divide operation', () => {
+  it('displays the correct number after the devide operation is used', () => {
     cy.get('#number6').click();
     cy.get('#number3').click();
     cy.get('#operator-divide').click();
@@ -56,7 +56,7 @@ describe("Calculator", () => {
     cy.get('.display').should('text', '3')
   })
 
-  it('should be able to operate chain multiple', () => {
+  it('returns the right number after chain multiple operators', () => {
     cy.get('#number6').click();
     cy.get('#operator-multiply').click();
     cy.get('#number2').click();
@@ -95,7 +95,7 @@ describe("Calculator", () => {
     cy.get('.display').should('text', '1620420')
   })
 
-  it('should be able to operate positive, decimal with large number', () => {
+  it('returns the correct number when it operates positive, decimal with large number', () => {
     cy.get('#number6').click();
     cy.get('#number7').click();
     cy.get('#number8').click();
